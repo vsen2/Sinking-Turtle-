@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed: float = 400.0
+@export var speed: float = 100.0
 
 func _process(delta: float):
 	var direction: float = 0.0
@@ -14,13 +14,16 @@ func _process(delta: float):
 		direction += 1.0
 	
 	# 3. Apply the movement
-	position.x += direction * speed * delta
-
-
+	position.x += direction * speed * 4 * delta
+	
+	if $"../ProgressBar".value <= 0:
+		speed = 0
+		$"../Label2".visible = true
 
 
 func _on_jellyfish_area_entered(area: Area2D) -> void:
 	modulate = Color.RED
+	$"../ProgressBar".value -= 10
 	await get_tree().create_timer(1.5).timeout
 	modulate = Color.WHITE
 	

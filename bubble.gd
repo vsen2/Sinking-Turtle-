@@ -5,7 +5,7 @@ extends Node2D
 
 func _process(delta: float):
 	# 1. Move the node UP
-	position.yA -= $"../Turtle".speed * delta
+	position.y -= $"../Turtle".speed * delta
 	#print(position.y)
 	
 	# 2. Get the screen dimensions

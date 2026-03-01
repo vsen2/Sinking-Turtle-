@@ -5,8 +5,9 @@ extends Node2D
 
 func _process(delta: float):
 	# 1. Move the node UP
-	position.yA -= $"../Turtle".speed * delta
-	#print(position.y)
+	position.y -= $"../Turtle".speed * delta
+	
+	position.x += $"../Turtle".speed * delta
 	
 	# 2. Get the screen dimensions
 	var viewport_size = get_viewport_rect().size
@@ -15,6 +16,7 @@ func _process(delta: float):
 	if position.y < 0:
 		# Reset to the bottom
 		position.y = viewport_size.y
+		position.x = 0
 		
 		# Move to a random X position between 0 and the screen width
-		position.x = randf_range(0, viewport_size.x)
+		

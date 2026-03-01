@@ -1,19 +1,25 @@
 [gd_scene format=3 uid="uid://bhvoirl2k56nm"]
 
 [ext_resource type="Script" uid="uid://co06bkl4av1sv" path="res://turtle.gd" id="1_arft3"]
-[ext_resource type="Texture2D" uid="uid://bgue3my14ag5r" path="res://images.png" id="2_xvjq1"]
 [ext_resource type="Script" uid="uid://sp0s4v3ieufh" path="res://jellyfish.gd" id="3_1x3p5"]
-[ext_resource type="Texture2D" uid="uid://ciaqd18eorthk" path="res://jellyfish.png" id="4_ree2w"]
-[ext_resource type="Texture2D" uid="uid://chkpwlh6qo8j7" path="res://bubbles.png" id="5_xvjq1"]
-[ext_resource type="Script" uid="uid://b3m5o5punphm4" path="res://bubbles.gd" id="6_1x3p5"]
+[ext_resource type="Texture2D" uid="uid://b6kcn8ycq2j53" path="res://sea-turtle.png" id="4_i4gkl"]
+[ext_resource type="Texture2D" uid="uid://baaaquslekigo" path="res://sea.png" id="6_0ah6n"]
 [ext_resource type="Texture2D" uid="uid://b45ne0fa2en1l" path="res://Drawing.sketchpad.png" id="7_eq78t"]
 [ext_resource type="Script" uid="uid://dg1taby6obfis" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
+[ext_resource type="Texture2D" uid="uid://d3hqoi7ausp5j" path="res://bubble.png" id="9_i4gkl"]
+[ext_resource type="Script" uid="uid://du07e75pb32yc" path="res://progress_bar.gd" id="9_t1r8p"]
+[ext_resource type="Script" uid="uid://djej0n684bdxs" path="res://bubble.gd" id="10_0ah6n"]
+[ext_resource type="Script" uid="uid://i85hh26oyjx5" path="res://Kaito.gd" id="10_mfvjc"]
+[ext_resource type="Texture2D" uid="uid://dtbl3ppalblgi" path="res://kaito.png" id="10_ym0iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr5v"]
-size = Vector2(242.5, 248.5)
+size = Vector2(173.5, 175.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ubf"]
-size = Vector2(118.5, 115)
+size = Vector2(121.25, 178.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4xxq"]
+size = Vector2(762.5077, 711.68896)
 
 [node name="Control" type="Control" unique_id=259236327]
 layout_mode = 3
@@ -33,31 +39,80 @@ script = ExtResource("8_t1r8p")
 script = ExtResource("1_arft3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turtle" unique_id=1356623942]
-position = Vector2(356.75, 273.25)
+position = Vector2(322.25, 309.75)
 shape = SubResource("RectangleShape2D_vjr5v")
 
-[node name="Turtle" type="Sprite2D" parent="Turtle" unique_id=1184264828]
-position = Vector2(347, 287)
-texture = ExtResource("2_xvjq1")
+[node name="SeaTurtle" type="Sprite2D" parent="Turtle" unique_id=1983628814]
+position = Vector2(321.375, 312.375)
+scale = Vector2(0.31103513, 0.32177734)
+texture = ExtResource("4_i4gkl")
 
 [node name="Jellyfish" type="Area2D" parent="." unique_id=384931131]
 position = Vector2(708, 273)
 script = ExtResource("3_1x3p5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jellyfish" unique_id=562242878]
-position = Vector2(41, -4)
+position = Vector2(42.375, 27.75)
 shape = SubResource("RectangleShape2D_t6ubf")
 
-[node name="Jellyfish" type="Sprite2D" parent="Jellyfish" unique_id=28011861]
-position = Vector2(37, 3.0517578e-05)
-scale = Vector2(0.4911111, 0.46888888)
-texture = ExtResource("4_ree2w")
+[node name="Sea" type="Sprite2D" parent="Jellyfish" unique_id=1615550998]
+position = Vector2(45.00006, 35.00003)
+scale = Vector2(0.34667954, 0.3779297)
+texture = ExtResource("6_0ah6n")
 
-[node name="Bubbles" type="Sprite2D" parent="." unique_id=1580532658]
-position = Vector2(1001.99994, 524)
-scale = Vector2(0.44666666, 0.5)
-texture = ExtResource("5_xvjq1")
-script = ExtResource("6_1x3p5")
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1237070196]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 36.0
+offset_right = 1110.0
+offset_bottom = 63.0
+show_percentage = false
+script = ExtResource("9_t1r8p")
+
+[node name="Label" type="Label" parent="." unique_id=2069041256]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 9.0
+offset_right = 763.0
+offset_bottom = 32.0
+text = "Turtle"
+
+[node name="Label2" type="Label" parent="." unique_id=1971630871]
+visible = false
+layout_mode = 0
+offset_left = 360.0
+offset_top = 228.0
+offset_right = 869.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE!"
+
+[node name="Bubble" type="Sprite2D" parent="." unique_id=480610167]
+position = Vector2(479, 497.5)
+scale = Vector2(0.23828128, 0.23242189)
+texture = ExtResource("9_i4gkl")
+script = ExtResource("10_0ah6n")
+
+[node name="Bubble2" type="Sprite2D" parent="." unique_id=8896884]
+position = Vector2(783, 529)
+scale = Vector2(0.40898135, 0.39054483)
+texture = ExtResource("9_i4gkl")
+script = ExtResource("10_0ah6n")
+
+[node name="Kaito" type="Area2D" parent="." unique_id=905672083]
+position = Vector2(479, 497.5)
+scale = Vector2(0.23828128, 0.23242189)
+script = ExtResource("10_mfvjc")
+
+[node name="Kaito" type="Sprite2D" parent="Kaito" unique_id=1495403459]
+position = Vector2(1992.3934, -911.05896)
+scale = Vector2(1.4795086, 1.4915965)
+texture = ExtResource("10_ym0iv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kaito" unique_id=1440000282]
+position = Vector2(1998.2867, -908.7185)
+scale = Vector2(1.0000005, 1)
+shape = SubResource("RectangleShape2D_a4xxq")
 
 [connection signal="area_entered" from="Turtle" to="Jellyfish" method="_on_turtle_area_entered"]
 [connection signal="area_entered" from="Jellyfish" to="Turtle" method="_on_jellyfish_area_entered"]

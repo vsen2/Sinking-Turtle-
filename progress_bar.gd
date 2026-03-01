@@ -1,0 +1,15 @@
+extends ProgressBar
+
+func _ready():
+	# Initialize the bar with player stats
+	max_value = 100
+	value = 100
+	
+func _process(delta: float):
+	if value < 30:
+		modulate = Color.DARK_ORANGE
+	else:
+		modulate = Color.GREEN
+		
+
+	
