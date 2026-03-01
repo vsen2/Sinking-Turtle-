@@ -1,19 +1,23 @@
-[gd_scene format=3 uid="uid://bhvoirl2k56nm"]
+[gd_scene format=3 uid="uid://cskl1kln0u3c8"]
 
 [ext_resource type="Script" uid="uid://co06bkl4av1sv" path="res://turtle.gd" id="1_arft3"]
 [ext_resource type="Script" uid="uid://sp0s4v3ieufh" path="res://jellyfish.gd" id="3_1x3p5"]
+[ext_resource type="Texture2D" uid="uid://cw4s2lv6n7n71" path="res://OIP.jpg" id="3_mfvjc"]
+[ext_resource type="Script" uid="uid://cvodwp67rw0eo" path="res://depthbar.gd" id="4_a4xxq"]
 [ext_resource type="Texture2D" uid="uid://b6kcn8ycq2j53" path="res://sea-turtle.png" id="4_i4gkl"]
+[ext_resource type="Texture2D" uid="uid://ib5t2c2sn12p" path="res://turtle.png" id="5_skh2q"]
 [ext_resource type="Texture2D" uid="uid://baaaquslekigo" path="res://sea.png" id="6_0ah6n"]
 [ext_resource type="Texture2D" uid="uid://b45ne0fa2en1l" path="res://Drawing.sketchpad.png" id="7_eq78t"]
-[ext_resource type="Script" uid="uid://dg1taby6obfis" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
+[ext_resource type="Script" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
 [ext_resource type="Texture2D" uid="uid://d3hqoi7ausp5j" path="res://bubble.png" id="9_i4gkl"]
-[ext_resource type="Script" uid="uid://du07e75pb32yc" path="res://progress_bar.gd" id="9_t1r8p"]
-[ext_resource type="Script" uid="uid://djej0n684bdxs" path="res://bubble.gd" id="10_0ah6n"]
-[ext_resource type="Script" uid="uid://dqk30vatumqxn" path="res://Kaito.gd" id="10_mfvjc"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="9_t1r8p"]
+[ext_resource type="Script" path="res://bubble.gd" id="10_0ah6n"]
+[ext_resource type="Script" uid="uid://dmfduihygwkm2" path="res://progress_bar_2.gd" id="10_i4gkl"]
+[ext_resource type="Script" path="res://Kaito.gd" id="10_mfvjc"]
 [ext_resource type="Texture2D" uid="uid://dtbl3ppalblgi" path="res://kaito.png" id="10_ym0iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr5v"]
-size = Vector2(173.5, 175.5)
+size = Vector2(153.5, 150.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ubf"]
 size = Vector2(121.25, 178.5)
@@ -39,13 +43,19 @@ script = ExtResource("8_t1r8p")
 script = ExtResource("1_arft3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turtle" unique_id=1356623942]
-position = Vector2(322.25, 309.75)
+position = Vector2(312.25, 322.25)
 shape = SubResource("RectangleShape2D_vjr5v")
 
 [node name="SeaTurtle" type="Sprite2D" parent="Turtle" unique_id=1983628814]
-position = Vector2(321.375, 312.375)
-scale = Vector2(0.31103513, 0.32177734)
+position = Vector2(314.375, 322.875)
+scale = Vector2(0.28369138, 0.28076172)
 texture = ExtResource("4_i4gkl")
+
+[node name="Turtle2" type="Sprite2D" parent="Turtle" unique_id=1539421700]
+visible = false
+position = Vector2(316, 321)
+scale = Vector2(0.28710938, 0.26171875)
+texture = ExtResource("5_skh2q")
 
 [node name="Jellyfish" type="Area2D" parent="." unique_id=384931131]
 position = Vector2(708, 273)
@@ -62,7 +72,7 @@ texture = ExtResource("6_0ah6n")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1237070196]
 layout_mode = 0
-offset_left = 714.0
+offset_left = 793.0
 offset_top = 57.0
 offset_right = 1110.0
 offset_bottom = 84.0
@@ -71,32 +81,22 @@ script = ExtResource("9_t1r8p")
 
 [node name="Label" type="Label" parent="." unique_id=2069041256]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 9.0
-offset_right = 763.0
-offset_bottom = 32.0
+offset_left = 793.0
+offset_top = 14.0
+offset_right = 882.0
+offset_bottom = 58.0
 theme_override_font_sizes/font_size = 31
-text = "Turtle"
-
-[node name="Label2" type="Label" parent="." unique_id=1971630871]
-visible = false
-layout_mode = 0
-offset_left = 360.0
-offset_top = 228.0
-offset_right = 869.0
-offset_bottom = 460.0
-theme_override_font_sizes/font_size = 100
-text = "YOU LOSE!"
+text = "Turtle HP:"
 
 [node name="Bubble" type="Sprite2D" parent="." unique_id=480610167]
-position = Vector2(479, 497.5)
-scale = Vector2(0.23828128, 0.23242189)
+position = Vector2(450, 527.5)
+scale = Vector2(0.12500001, 0.115234375)
 texture = ExtResource("9_i4gkl")
 script = ExtResource("10_0ah6n")
 
 [node name="Bubble2" type="Sprite2D" parent="." unique_id=8896884]
-position = Vector2(783, 529)
-scale = Vector2(0.40898135, 0.39054483)
+position = Vector2(819.3496, 562.98975)
+scale = Vector2(0.26699066, 0.2577724)
 texture = ExtResource("9_i4gkl")
 script = ExtResource("10_0ah6n")
 
@@ -114,6 +114,70 @@ texture = ExtResource("10_ym0iv")
 position = Vector2(4.1968994, 17.20996)
 scale = Vector2(1.0000005, 1)
 shape = SubResource("RectangleShape2D_a4xxq")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=558114945]
+position = Vector2(37.5, 25)
+scale = Vector2(1.3499992, 0.9135803)
+points = PackedVector2Array(20, 10, 20, 423.59723, 20, 638)
+
+[node name="Line2D2" type="Line2D" parent="Line2D" unique_id=514489047]
+points = PackedVector2Array(35, 10, 5, 10)
+closed = true
+
+[node name="Label" type="Label" parent="Line2D/Line2D2" unique_id=616001767]
+offset_left = 39.0
+offset_top = -3.0
+offset_right = 79.0
+offset_bottom = 20.0
+text = "0m"
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D3" type="Line2D" parent="Line2D" unique_id=1029201560]
+points = PackedVector2Array(5, 638, 35, 638)
+closed = true
+
+[node name="Label" type="Label" parent="Line2D/Line2D3" unique_id=1240166590]
+offset_left = 42.0
+offset_top = 626.0
+offset_right = 94.0
+offset_bottom = 675.0
+text = "2000m
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Oip" type="Sprite2D" parent="Line2D" unique_id=193196961]
+position = Vector2(23.5, -61)
+scale = Vector2(0.13120566, 0.1205674)
+texture = ExtResource("3_mfvjc")
+script = ExtResource("4_a4xxq")
+
+[node name="Label2" type="Label" parent="." unique_id=1971630871]
+visible = false
+layout_mode = 0
+offset_left = 360.0
+offset_top = 228.0
+offset_right = 869.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE!"
+
+[node name="Label3" type="Label" parent="." unique_id=1090309773]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 93.0
+offset_right = 941.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 31
+text = "Oxygen"
+
+[node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1567084314]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 143.0
+offset_right = 1111.0
+offset_bottom = 170.0
+show_percentage = false
+script = ExtResource("10_i4gkl")
 
 [connection signal="area_entered" from="Turtle" to="Jellyfish" method="_on_turtle_area_entered"]
 [connection signal="area_entered" from="Turtle" to="Kaito" method="_on_turtle_area_entered"]
