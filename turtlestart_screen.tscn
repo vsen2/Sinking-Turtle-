@@ -1,9 +1,54 @@
-[gd_scene format=3 uid="uid://lh3km0xh0xhf"]
+[gd_scene format=3 uid="uid://b7lm73wl2ykdk"]
+
+[ext_resource type="Texture2D" uid="uid://cqci1fq25hiws" path="res://wrzjDx.webp" id="1_a3j38"]
+[ext_resource type="FontFile" uid="uid://dvmg3mik5jsu2" path="res://Aquaphonic-Drizzle.otf" id="2_3ddfp"]
+[ext_resource type="Script" uid="uid://d3smwr4kt6hxg" path="res://start.gd" id="2_6xjlm"]
+
+[sub_resource type="FontVariation" id="FontVariation_d0dem"]
+base_font = ExtResource("2_3ddfp")
 
 [node name="Node2D" type="Node2D" unique_id=57698563]
 
+[node name="WrzjDx" type="Sprite2D" parent="." unique_id=1325899017]
+position = Vector2(589.28125, 327.4375)
+scale = Vector2(1.691976, 3.610026)
+texture = ExtResource("1_a3j38")
+
+[node name="Label" type="Label" parent="." unique_id=116357765]
+offset_left = 163.0
+offset_top = 37.0
+offset_right = 1012.0
+offset_bottom = 434.0
+theme_override_fonts/font = SubResource("FontVariation_d0dem")
+theme_override_font_sizes/font_size = 200
+text = "Timmy The 
+Turtle"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_6xjlm")
+
+[node name="Label2" type="Label" parent="." unique_id=2127429545]
+visible = false
+offset_left = -6.0
+offset_top = 67.0
+offset_right = 1161.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 30
+text = "you play as Timmy the android turtle, 
+created by a scientist drivin with an unstable relationship,
+with a goal to find a long lost wedding ring
+YOUR GOAL! is to travel beneath the surface
+AND recover the RING!
+use A or D to move and avoid the painful sea creatures
+use space to change between shell and normal mode"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="." unique_id=1792674682]
-offset_left = 433.0
-offset_top = 174.0
-offset_right = 574.0
-offset_bottom = 285.0
+offset_left = 487.0
+offset_top = 441.0
+offset_right = 698.0
+offset_bottom = 555.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[connection signal="pressed" from="Button" to="Label" method="_on_button_pressed"]

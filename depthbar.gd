@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 	self.position.x = 20
 	if self.position.y < 638:
 		self.position.y = 648*(turtledepth/2000) + 15
-	
+	else:
+		$"../../Turtle".speed = 0
+		$"../../u win".visible = true
 
 	pass

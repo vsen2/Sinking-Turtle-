@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Turtle-sinking"
-run/main_scene="res://Turtle.tscn"
+run/main_scene="uid://b7lm73wl2ykdk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

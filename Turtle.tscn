@@ -12,13 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://ib5t2c2sn12p" path="res://turtle.png" id="5_skh2q"]
 [ext_resource type="Script" uid="uid://d0ssopx0vc1x4" path="res://wave2.gd" id="5_txn77"]
 [ext_resource type="Texture2D" uid="uid://baaaquslekigo" path="res://sea.png" id="6_0ah6n"]
-[ext_resource type="Script" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
+[ext_resource type="Script" uid="uid://dg1taby6obfis" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
 [ext_resource type="Texture2D" uid="uid://d3hqoi7ausp5j" path="res://bubble.png" id="9_i4gkl"]
-[ext_resource type="Script" path="res://progress_bar.gd" id="9_t1r8p"]
-[ext_resource type="Script" path="res://bubble.gd" id="10_0ah6n"]
+[ext_resource type="Script" uid="uid://du07e75pb32yc" path="res://progress_bar.gd" id="9_t1r8p"]
+[ext_resource type="Script" uid="uid://djej0n684bdxs" path="res://bubble.gd" id="10_0ah6n"]
 [ext_resource type="Script" uid="uid://dmfduihygwkm2" path="res://progress_bar_2.gd" id="10_i4gkl"]
-[ext_resource type="Script" path="res://Kaito.gd" id="10_mfvjc"]
+[ext_resource type="Script" uid="uid://dqk30vatumqxn" path="res://Kaito.gd" id="10_mfvjc"]
+[ext_resource type="Texture2D" uid="uid://dm5p6h8sdshsg" path="res://Trt1PH.png" id="10_xtgvi"]
 [ext_resource type="Texture2D" uid="uid://dtbl3ppalblgi" path="res://kaito.png" id="10_ym0iv"]
+[ext_resource type="Texture2D" uid="uid://c2v138kglml8r" path="res://TRT2PH.png" id="11_hj2s5"]
+[ext_resource type="Texture2D" uid="uid://vs7yl6guj2rg" path="res://TRT3PH.png" id="12_n5opb"]
+[ext_resource type="Texture2D" uid="uid://ccb6yrtjd25bk" path="res://TRT4PH.png" id="13_21ykd"]
+[ext_resource type="Texture2D" uid="uid://ursyv00mkv38" path="res://TRT5PH.png" id="14_15glo"]
 [ext_resource type="Texture2D" uid="uid://cguhl8ng0v1q6" path="res://Light.png" id="16_hfqlt"]
 [ext_resource type="Script" uid="uid://becbk2bgemodj" path="res://light.gd" id="17_b8ea6"]
 [ext_resource type="AudioStream" uid="uid://bqji7xhtodofe" path="res://sssSpotify.com_downloader_1772395087749.mp3" id="22_txn77"]
@@ -27,7 +32,7 @@
 load_path = "res://.godot/imported/Drawing.sketchpad.png-b69b3a9b3db7b2877ecd71125ad8d9e2.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr5v"]
-size = Vector2(153.5, 150.5)
+size = Vector2(116, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ubf"]
 size = Vector2(121.25, 178.5)
@@ -133,7 +138,7 @@ script = ExtResource("8_t1r8p")
 script = ExtResource("1_arft3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turtle" unique_id=1356623942]
-position = Vector2(312.25, 322.25)
+position = Vector2(316, 330.5)
 shape = SubResource("RectangleShape2D_vjr5v")
 
 [node name="SeaTurtle" type="Sprite2D" parent="Turtle" unique_id=1983628814]
@@ -147,8 +152,37 @@ position = Vector2(316, 321)
 scale = Vector2(0.28710938, 0.26171875)
 texture = ExtResource("5_skh2q")
 
+[node name="Trt1ph" type="Sprite2D" parent="Turtle" unique_id=1161177577]
+visible = false
+position = Vector2(214.5, 301.25003)
+scale = Vector2(0.23802084, 0.24490742)
+texture = ExtResource("10_xtgvi")
+
+[node name="Trt2ph" type="Sprite2D" parent="Turtle" unique_id=1818349382]
+visible = false
+position = Vector2(213, 297.5)
+scale = Vector2(0.23541667, 0.23796296)
+texture = ExtResource("11_hj2s5")
+
+[node name="Trt3ph" type="Sprite2D" parent="Turtle" unique_id=657743133]
+visible = false
+position = Vector2(218.5, 302.5)
+scale = Vector2(0.23802084, 0.23796296)
+texture = ExtResource("12_n5opb")
+
+[node name="Trt4ph" type="Sprite2D" parent="Turtle" unique_id=1572460220]
+visible = false
+position = Vector2(221, 306.5)
+scale = Vector2(0.24479167, 0.23796296)
+texture = ExtResource("13_21ykd")
+
+[node name="Trt5ph" type="Sprite2D" parent="Turtle" unique_id=1581093001]
+visible = false
+position = Vector2(221, 302)
+scale = Vector2(0.24479167, 0.2462963)
+texture = ExtResource("14_15glo")
+
 [node name="Jellyfish" type="Area2D" parent="." unique_id=384931131]
-position = Vector2(708, 273)
 script = ExtResource("3_1x3p5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jellyfish" unique_id=562242878]
@@ -202,7 +236,7 @@ scale = Vector2(1.0000005, 1)
 shape = SubResource("RectangleShape2D_a4xxq")
 
 [node name="Light" type="Sprite2D" parent="." unique_id=825726438]
-position = Vector2(607, 664.00006)
+position = Vector2(607, 629.00006)
 scale = Vector2(1.2589206, 1.3430555)
 texture = ExtResource("16_hfqlt")
 script = ExtResource("17_b8ea6")
@@ -215,15 +249,6 @@ offset_right = 1110.0
 offset_bottom = 84.0
 show_percentage = false
 script = ExtResource("9_t1r8p")
-
-[node name="Label" type="Label" parent="." unique_id=2069041256]
-layout_mode = 0
-offset_left = 793.0
-offset_top = 14.0
-offset_right = 941.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 31
-text = "Turtle HP:"
 
 [node name="Line2D" type="Line2D" parent="." unique_id=558114945]
 position = Vector2(37.5, 25)
@@ -251,7 +276,7 @@ offset_left = 42.0
 offset_top = 626.0
 offset_right = 94.0
 offset_bottom = 675.0
-text = "2000m
+text = "Ring
 "
 metadata/_edit_use_anchors_ = true
 
@@ -261,7 +286,16 @@ scale = Vector2(0.13120566, 0.1205674)
 texture = ExtResource("3_mfvjc")
 script = ExtResource("4_a4xxq")
 
-[node name="Label2" type="Label" parent="." unique_id=1971630871]
+[node name="Turtle HP" type="Label" parent="." unique_id=2069041256]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 14.0
+offset_right = 941.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 31
+text = "Turtle HP:"
+
+[node name="lose" type="Label" parent="." unique_id=1971630871]
 visible = false
 layout_mode = 0
 offset_left = 360.0
@@ -271,7 +305,17 @@ offset_bottom = 460.0
 theme_override_font_sizes/font_size = 100
 text = "YOU LOSE!"
 
-[node name="Label3" type="Label" parent="." unique_id=1090309773]
+[node name="u win" type="Label" parent="." unique_id=1356407045]
+visible = false
+layout_mode = 0
+offset_left = 360.0
+offset_top = 228.0
+offset_right = 869.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN!"
+
+[node name="Oxygen" type="Label" parent="." unique_id=1090309773]
 layout_mode = 0
 offset_left = 793.0
 offset_top = 93.0
@@ -297,8 +341,6 @@ libraries/ = SubResource("AnimationLibrary_hfqlt")
 stream = ExtResource("22_txn77")
 autoplay = true
 
-[connection signal="area_entered" from="Turtle" to="Jellyfish" method="_on_turtle_area_entered"]
-[connection signal="area_entered" from="Turtle" to="Kaito" method="_on_turtle_area_entered"]
 [connection signal="area_entered" from="Jellyfish" to="Turtle" method="_on_jellyfish_area_entered"]
 [connection signal="area_entered" from="bubble1" to="Turtle" method="_on_bubble_1_area_entered"]
 [connection signal="area_entered" from="bubble2" to="Turtle" method="_on_bubble_1_area_entered"]
