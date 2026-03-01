@@ -1,7 +1,6 @@
 extends ProgressBar
 
 func _ready():
-	# Initialize the bar with player stats
 	max_value = 100
 	value = 100
 	
