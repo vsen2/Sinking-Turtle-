@@ -17,8 +17,4 @@ func _process(delta: float):
 		position.y = viewport_size.y
 		
 		# Move to a random X position between 0 and the screen width
-		position.x = randf_range(0, viewport_size.x)
-
-
-func _on_turtle_area_entered(area: Area2D) -> void:
-	print("kaito")
+		

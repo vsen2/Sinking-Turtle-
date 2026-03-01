@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bhvoirl2k56nm"]
+
+[ext_resource type="Script" uid="uid://co06bkl4av1sv" path="res://turtle.gd" id="1_arft3"]
+[ext_resource type="Texture2D" uid="uid://bgue3my14ag5r" path="res://images.png" id="2_xvjq1"]
+[ext_resource type="Script" uid="uid://sp0s4v3ieufh" path="res://jellyfish.gd" id="3_1x3p5"]
+[ext_resource type="Texture2D" uid="uid://ciaqd18eorthk" path="res://jellyfish.png" id="4_ree2w"]
+[ext_resource type="Texture2D" uid="uid://chkpwlh6qo8j7" path="res://bubbles.png" id="5_xvjq1"]
+[ext_resource type="Script" uid="uid://b3m5o5punphm4" path="res://bubbles.gd" id="6_1x3p5"]
+[ext_resource type="Texture2D" uid="uid://b45ne0fa2en1l" path="res://Drawing.sketchpad.png" id="7_eq78t"]
+[ext_resource type="Script" uid="uid://dg1taby6obfis" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr5v"]
+size = Vector2(242.5, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ubf"]
+size = Vector2(118.5, 115)
+
+[node name="Control" type="Control" unique_id=259236327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Drawing_sketchpad" type="Sprite2D" parent="." unique_id=1393376453]
+position = Vector2(581, -20)
+scale = Vector2(1.4702504, 1.3998091)
+texture = ExtResource("7_eq78t")
+script = ExtResource("8_t1r8p")
+
+[node name="Turtle" type="Area2D" parent="." unique_id=1984600192]
+script = ExtResource("1_arft3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turtle" unique_id=1356623942]
+position = Vector2(356.75, 273.25)
+shape = SubResource("RectangleShape2D_vjr5v")
+
+[node name="Turtle" type="Sprite2D" parent="Turtle" unique_id=1184264828]
+position = Vector2(347, 287)
+texture = ExtResource("2_xvjq1")
+
+[node name="Jellyfish" type="Area2D" parent="." unique_id=384931131]
+position = Vector2(708, 273)
+script = ExtResource("3_1x3p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jellyfish" unique_id=562242878]
+position = Vector2(41, -4)
+shape = SubResource("RectangleShape2D_t6ubf")
+
+[node name="Jellyfish" type="Sprite2D" parent="Jellyfish" unique_id=28011861]
+position = Vector2(37, 3.0517578e-05)
+scale = Vector2(0.4911111, 0.46888888)
+texture = ExtResource("4_ree2w")
+
+[node name="Bubbles" type="Sprite2D" parent="." unique_id=1580532658]
+position = Vector2(1001.99994, 524)
+scale = Vector2(0.44666666, 0.5)
+texture = ExtResource("5_xvjq1")
+script = ExtResource("6_1x3p5")
+
+[connection signal="area_entered" from="Turtle" to="Jellyfish" method="_on_turtle_area_entered"]
+[connection signal="area_entered" from="Jellyfish" to="Turtle" method="_on_jellyfish_area_entered"]
