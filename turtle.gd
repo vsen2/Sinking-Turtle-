@@ -8,11 +8,13 @@ func _process(delta: float):
 	# 1. Check for Left input (A or Left Arrow)
 	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
 		direction -= 1.0
+		$SeaTurtle.flip_h = true
 		
 	# 2. Check for Right input (D or Right Arrow)
 	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
 		direction += 1.0
-	
+		$SeaTurtle.flip_h = false
+			
 	# 3. Apply the movement
 	position.x += direction * speed * 4 * delta
 	
@@ -47,3 +49,8 @@ func _input(event):
 				$SeaTurtle.visible = true
 				$Turtle2.visible = false
 				speed = 100
+
+
+func _on_bubble_1_area_entered(area: Area2D) -> void:
+	$"../ProgressBar2".value += 15
+	$"../bubble1".visible = false

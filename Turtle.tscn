@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://cskl1kln0u3c8"]
 
 [ext_resource type="Script" uid="uid://co06bkl4av1sv" path="res://turtle.gd" id="1_arft3"]
+[ext_resource type="Texture2D" uid="uid://8o7fy105yl37" path="res://Screenshot 2026-03-01 141611.png" id="1_hfqlt"]
+[ext_resource type="Texture2D" uid="uid://ccca76ko2ngjr" path="res://Unnamed (2).png" id="2_y2eqr"]
 [ext_resource type="Script" uid="uid://sp0s4v3ieufh" path="res://jellyfish.gd" id="3_1x3p5"]
 [ext_resource type="Texture2D" uid="uid://cw4s2lv6n7n71" path="res://OIP.jpg" id="3_mfvjc"]
+[ext_resource type="Script" uid="uid://dpmlr2qtxocdq" path="res://darkwave1.gd" id="3_ppn1v"]
 [ext_resource type="Script" uid="uid://cvodwp67rw0eo" path="res://depthbar.gd" id="4_a4xxq"]
 [ext_resource type="Texture2D" uid="uid://b6kcn8ycq2j53" path="res://sea-turtle.png" id="4_i4gkl"]
+[ext_resource type="Texture2D" uid="uid://c6k6b14jhc43y" path="res://Unnamed (3).png" id="4_ule8l"]
 [ext_resource type="Texture2D" uid="uid://ib5t2c2sn12p" path="res://turtle.png" id="5_skh2q"]
+[ext_resource type="Script" uid="uid://d0ssopx0vc1x4" path="res://wave2.gd" id="5_txn77"]
 [ext_resource type="Texture2D" uid="uid://baaaquslekigo" path="res://sea.png" id="6_0ah6n"]
-[ext_resource type="Texture2D" uid="uid://b45ne0fa2en1l" path="res://Drawing.sketchpad.png" id="7_eq78t"]
 [ext_resource type="Script" path="res://drawing_sketchpad.gd" id="8_t1r8p"]
 [ext_resource type="Texture2D" uid="uid://d3hqoi7ausp5j" path="res://bubble.png" id="9_i4gkl"]
 [ext_resource type="Script" path="res://progress_bar.gd" id="9_t1r8p"]
@@ -15,6 +19,12 @@
 [ext_resource type="Script" uid="uid://dmfduihygwkm2" path="res://progress_bar_2.gd" id="10_i4gkl"]
 [ext_resource type="Script" path="res://Kaito.gd" id="10_mfvjc"]
 [ext_resource type="Texture2D" uid="uid://dtbl3ppalblgi" path="res://kaito.png" id="10_ym0iv"]
+[ext_resource type="Texture2D" uid="uid://cguhl8ng0v1q6" path="res://Light.png" id="16_hfqlt"]
+[ext_resource type="Script" uid="uid://becbk2bgemodj" path="res://light.gd" id="17_b8ea6"]
+[ext_resource type="AudioStream" uid="uid://bqji7xhtodofe" path="res://sssSpotify.com_downloader_1772395087749.mp3" id="22_txn77"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ttfx"]
+load_path = "res://.godot/imported/Drawing.sketchpad.png-b69b3a9b3db7b2877ecd71125ad8d9e2.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr5v"]
 size = Vector2(153.5, 150.5)
@@ -22,8 +32,70 @@ size = Vector2(153.5, 150.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6ubf"]
 size = Vector2(121.25, 178.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2eqr"]
+size = Vector2(718.5, 770.92444)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4xxq"]
 size = Vector2(762.5077, 711.68896)
+
+[sub_resource type="Animation" id="Animation_6ttfx"]
+resource_name = "Light movement"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-52, 0, 0, 1.3333334, 204.83334, 1177, -1.3333334, -204.83334, 0, 0),
+"times": PackedFloat32Array(0, 7.9666667)
+}
+
+[sub_resource type="Animation" id="Animation_hfqlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(607, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfqlt"]
+_data = {
+&"Light movement": SubResource("Animation_6ttfx"),
+&"RESET": SubResource("Animation_hfqlt")
+}
 
 [node name="Control" type="Control" unique_id=259236327]
 layout_mode = 3
@@ -33,10 +105,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Screenshot20260301141611" type="Sprite2D" parent="." unique_id=1672794283]
+position = Vector2(561, 3)
+scale = Vector2(57.192307, 44.651512)
+texture = ExtResource("1_hfqlt")
+
+[node name="Unnamed(2)" type="Sprite2D" parent="." unique_id=770242860]
+position = Vector2(999.0807, 761.0918)
+rotation = -0.5235988
+scale = Vector2(0.7319832, 0.53383416)
+texture = ExtResource("2_y2eqr")
+script = ExtResource("3_ppn1v")
+
+[node name="Unnamed(3)" type="Sprite2D" parent="." unique_id=1118816654]
+position = Vector2(614, 987.00006)
+scale = Vector2(0.8046875, 0.7175926)
+texture = ExtResource("4_ule8l")
+script = ExtResource("5_txn77")
+
 [node name="Drawing_sketchpad" type="Sprite2D" parent="." unique_id=1393376453]
-position = Vector2(581, -20)
+position = Vector2(2215, -138)
 scale = Vector2(1.4702504, 1.3998091)
-texture = ExtResource("7_eq78t")
+texture = SubResource("CompressedTexture2D_6ttfx")
 script = ExtResource("8_t1r8p")
 
 [node name="Turtle" type="Area2D" parent="." unique_id=1984600192]
@@ -47,8 +137,8 @@ position = Vector2(312.25, 322.25)
 shape = SubResource("RectangleShape2D_vjr5v")
 
 [node name="SeaTurtle" type="Sprite2D" parent="Turtle" unique_id=1983628814]
-position = Vector2(314.375, 322.875)
-scale = Vector2(0.28369138, 0.28076172)
+position = Vector2(315.875, 328)
+scale = Vector2(0.28955078, 0.30078125)
 texture = ExtResource("4_i4gkl")
 
 [node name="Turtle2" type="Sprite2D" parent="Turtle" unique_id=1539421700]
@@ -70,35 +160,31 @@ position = Vector2(45.00006, 35.00003)
 scale = Vector2(0.34667954, 0.3779297)
 texture = ExtResource("6_0ah6n")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1237070196]
-layout_mode = 0
-offset_left = 793.0
-offset_top = 57.0
-offset_right = 1110.0
-offset_bottom = 84.0
-show_percentage = false
-script = ExtResource("9_t1r8p")
-
-[node name="Label" type="Label" parent="." unique_id=2069041256]
-layout_mode = 0
-offset_left = 793.0
-offset_top = 14.0
-offset_right = 882.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 31
-text = "Turtle HP:"
-
-[node name="Bubble" type="Sprite2D" parent="." unique_id=480610167]
+[node name="bubble1" type="Area2D" parent="." unique_id=32932670]
 position = Vector2(450, 527.5)
 scale = Vector2(0.12500001, 0.115234375)
-texture = ExtResource("9_i4gkl")
 script = ExtResource("10_0ah6n")
 
-[node name="Bubble2" type="Sprite2D" parent="." unique_id=8896884]
-position = Vector2(819.3496, 562.98975)
-scale = Vector2(0.26699066, 0.2577724)
+[node name="Bubble" type="Sprite2D" parent="bubble1" unique_id=480610167]
 texture = ExtResource("9_i4gkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble1" unique_id=1574429112]
+position = Vector2(-14.5, -23.109375)
+shape = SubResource("RectangleShape2D_y2eqr")
+
+[node name="bubble2" type="Area2D" parent="." unique_id=1169284011]
+position = Vector2(450, 527.5)
+scale = Vector2(0.12500001, 0.115234375)
 script = ExtResource("10_0ah6n")
+
+[node name="Bubble" type="Sprite2D" parent="bubble2" unique_id=1512010363]
+position = Vector2(1407.9998, 186.57617)
+scale = Vector2(1.9687495, 2.067797)
+texture = ExtResource("9_i4gkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble2" unique_id=2115762849]
+position = Vector2(1407.25, 181.52979)
+shape = SubResource("RectangleShape2D_y2eqr")
 
 [node name="Kaito" type="Area2D" parent="." unique_id=905672083]
 position = Vector2(968, 341.00003)
@@ -114,6 +200,30 @@ texture = ExtResource("10_ym0iv")
 position = Vector2(4.1968994, 17.20996)
 scale = Vector2(1.0000005, 1)
 shape = SubResource("RectangleShape2D_a4xxq")
+
+[node name="Light" type="Sprite2D" parent="." unique_id=825726438]
+position = Vector2(607, 664.00006)
+scale = Vector2(1.2589206, 1.3430555)
+texture = ExtResource("16_hfqlt")
+script = ExtResource("17_b8ea6")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1237070196]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 57.0
+offset_right = 1110.0
+offset_bottom = 84.0
+show_percentage = false
+script = ExtResource("9_t1r8p")
+
+[node name="Label" type="Label" parent="." unique_id=2069041256]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 14.0
+offset_right = 941.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 31
+text = "Turtle HP:"
 
 [node name="Line2D" type="Line2D" parent="." unique_id=558114945]
 position = Vector2(37.5, 25)
@@ -179,7 +289,17 @@ offset_bottom = 170.0
 show_percentage = false
 script = ExtResource("10_i4gkl")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=516129323]
+root_node = NodePath("../Light")
+libraries/ = SubResource("AnimationLibrary_hfqlt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=838832769]
+stream = ExtResource("22_txn77")
+autoplay = true
+
 [connection signal="area_entered" from="Turtle" to="Jellyfish" method="_on_turtle_area_entered"]
 [connection signal="area_entered" from="Turtle" to="Kaito" method="_on_turtle_area_entered"]
 [connection signal="area_entered" from="Jellyfish" to="Turtle" method="_on_jellyfish_area_entered"]
+[connection signal="area_entered" from="bubble1" to="Turtle" method="_on_bubble_1_area_entered"]
+[connection signal="area_entered" from="bubble2" to="Turtle" method="_on_bubble_1_area_entered"]
 [connection signal="area_entered" from="Kaito" to="Turtle" method="_on_kaito_area_entered"]
