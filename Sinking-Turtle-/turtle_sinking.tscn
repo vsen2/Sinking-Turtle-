@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bwefi2rux3sv3"]
+
+[ext_resource type="Texture2D" uid="uid://bgue3my14ag5r" path="res://images.png" id="1_rnfv1"]
+[ext_resource type="Texture2D" uid="uid://ciaqd18eorthk" path="res://jellyfish.png" id="2_6atxb"]
+[ext_resource type="Script" uid="uid://co06bkl4av1sv" path="res://turtle.gd" id="2_c7l50"]
+[ext_resource type="Script" uid="uid://sp0s4v3ieufh" path="res://jellyfish.gd" id="3_c7l50"]
+[ext_resource type="Script" uid="uid://cvodwp67rw0eo" path="res://depthbar.gd" id="3_nteor"]
+[ext_resource type="Texture2D" uid="uid://cw4s2lv6n7n71" path="res://OIP.jpg" id="5_nteor"]
+
+[node name="Control" type="Control" unique_id=259236327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Turtle" type="Sprite2D" parent="." unique_id=1184264828]
+position = Vector2(347, 287)
+texture = ExtResource("1_rnfv1")
+script = ExtResource("2_c7l50")
+
+[node name="Jellyfish" type="Sprite2D" parent="." unique_id=28011861]
+position = Vector2(771.75, 279.25)
+scale = Vector2(0.4911111, 0.46888888)
+texture = ExtResource("2_6atxb")
+script = ExtResource("3_c7l50")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1153646248]
+points = PackedVector2Array(20, 10, 20, 638)
+
+[node name="Line2D2" type="Line2D" parent="Line2D" unique_id=2081744234]
+points = PackedVector2Array(35, 10, 5, 10)
+closed = true
+
+[node name="Label" type="Label" parent="Line2D/Line2D2" unique_id=2093201038]
+offset_left = 39.0
+offset_top = -3.0
+offset_right = 79.0
+offset_bottom = 20.0
+text = "0m"
+
+[node name="Line2D3" type="Line2D" parent="Line2D" unique_id=485516454]
+points = PackedVector2Array(5, 638, 35, 638)
+closed = true
+
+[node name="Label" type="Label" parent="Line2D/Line2D3" unique_id=857325631]
+offset_left = 42.0
+offset_top = 626.0
+offset_right = 94.0
+offset_bottom = 675.0
+text = "2000m
+"
+
+[node name="Oip" type="Sprite2D" parent="Line2D" unique_id=819388285]
+position = Vector2(23.5, -61)
+scale = Vector2(0.13120566, 0.1205674)
+texture = ExtResource("5_nteor")
+script = ExtResource("3_nteor")
